@@ -1,0 +1,10 @@
+{
+  "simulation": "PlanDePruebasGatling",
+  "simulationId": "plandepruebasgatling-20230423221102506",
+  "start": 1682287864307,
+  "description": "Prueba tecnica parte 2 gatling",
+  "scenarios": ["All test scenarios"],
+  "assertions": [
+
+  ]
+}

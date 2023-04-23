@@ -1,0 +1,26 @@
+Notas importantes:
+
+1) En el informe(parte4) se aclaran las versiones utilizadas de Jmeter, Gatling y java.
+
+
+2) Jmeter y Gatling:
+
+Para el requerimiento que solicitaba configurar al menos una solicitud HTTP para que incluya parámetros dinámicos generados por una función personalizada que haya creado para Jmeter y Gatling, se realizo una solicitud HTTP que consiste en un proceso de registro de usuario en la aplicacion web, este proceso de registro hace uso de un proyecto java que genera un archivo CSV, por lo tanto antes de correr las pruebas es importante modificar el path de ruta de ese archivo en las pruebas de Jmeter y gatling
+
+• Se debe abrir el proyecto java llamado DatosDinamicos y verificar la presencia de un archivo csv en la raiz del proyecto llamado datos.csv, en caso de que el archivo no este presente se debe ejecutar el proyecto para generarlo, una vez realizado esto se debe verificar el path del archivo
+
+• En jmeter se debe abrir la solicitud http singUp, dirigirse al archivo de configuracion llamado CSV Data Set Config y en el campo filename modificar el path de acuerdo a la ubicacion del archivo datos.csv en su equipo.
+
+• En gatling se debe abrir el archivo .scala y modificar el codigo  val userData = csv("ubicacion del archivo datos.csv").random
+•La ejecucion de simulacion de gatling se realizo con el archivo .scala en la carpeta simulaciones de gatling y ejecutando el comando gatling.bat
+
+
+
+3) Selenium:
+
+• Las pruebas se deben ejecutar desde el archivo suite.xml ubicado en la carptera resoruces ya que desde este archivo se inyectan una serie de parametros como url, broswer,etc
+la ruta exacta de este archivo es src/test/resorces/suite.xml, de no ejecutar los test desde este archivo todas las pruebas fallaran.
+
+• Se utilizo patron de deseño Page Object Model(POM) para organizar los archivos.
+
+• En cuanto a la prueba de selenium las automatizaciones de inicio de sesion y busqueda de producto se realizaron en la pagina web https://petstore.octoperf.com/, mientras que la prueba para manejar una alerta se utilizo la pagina https://www.demoblaze.com/, se tomo esta desicion ya que la pagina petstore no contaba con alertar para hacer un testeo de este tipo y la pagina de demoblaze no contaba con un input de busqueda de producto como para hacer todas las pruebas en ella.

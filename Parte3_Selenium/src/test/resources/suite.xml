@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test suite imagine apps technical test">
+
+    <listeners>
+        <listener class-name="org.imagineApps.utils.Listener"/>
+        <listener class-name="org.testng.reporters.TestHTMLReporter"/>
+        <listener class-name="org.testng.reporters.JUnitXMLReporter"/>
+        <listener class-name="org.testng.reporters.EmailableReporter"/>
+    </listeners>
+
+    <parameter name="url" value="https://petstore.octoperf.com/"></parameter>
+    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="productSearched" value="koi"></parameter>
+    <parameter name="username" value="j2ee"></parameter>
+    <parameter name="password" value="j2ee"></parameter>
+    <parameter name="demoBlazeUrl" value="https://www.demoblaze.com/index.html"></parameter>
+
+    <test name="Login Test" enabled="true" >
+        <classes>
+            <class name="org.imagineApps.tests.LoginTest" />
+        </classes>
+    </test>
+
+    <test name="Search Product Test" enabled="true" >
+        <classes>
+            <class name="org.imagineApps.tests.SearchProductTest" />
+        </classes>
+    </test>
+
+    <test name="DemoBlaze Test" enabled="true" >
+        <classes>
+            <class name="org.imagineApps.tests.HandleAlertTest" />
+        </classes>
+    </test>
+
+
+</suite>
